@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Aprender Angular",
+      "description": "Completar el tutorial oficial de Angular",
+      "status": "En Progreso"
+    },
+    {
+      "id": "2",
+      "title": "Preparar presentación",
+      "description": "Crear slides para la reunión de equipo",
+      "status": "Pendiente"
+    },
+    {
+      "id": "3",
+      "title": "Revisar PRs",
+      "description": "Revisar los pull requests pendientes en el repositorio",
+      "status": "Finalizada"
+    },
+    {
+      "id": "3ec6",
+      "title": "dqwd",
+      "description": "dqwdqwdqwq",
+      "status": "En Progreso",
+      "createdAt": "2025-06-11T23:57:05.913Z"
+    }
+  ]
+}

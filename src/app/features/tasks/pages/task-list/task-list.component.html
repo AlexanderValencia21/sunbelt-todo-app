@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Lista de Tareas</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="openAddTaskModal()">
+          <ion-icon name="add" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <mat-card *ngIf="loading" class="loading-spinner">
+      <mat-spinner diameter="50"></mat-spinner>
+    </mat-card>
+  
+    <div class="filters">
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input matInput [(ngModel)]="searchText" (input)="applyFilters()" placeholder="Buscar tareas...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select [(value)]="selectedStatus" (selectionChange)="applyFilters()">
+          <mat-option value="">Todos</mat-option>
+          <mat-option *ngFor="let status of statusOptions" [value]="status.value">
+            {{ status.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <mat-card *ngFor="let task of filteredTasks" class="task-card">
+      <mat-card-header>
+        <mat-card-title>{{ task.title }}</mat-card-title>
+        <mat-card-subtitle>
+          <span [class]="'status-badge ' + getStatusClass(task.status)">
+            {{ task.status }}
+          </span>
+        </mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p>{{ task.description }}</p>
+      </mat-card-content>
+      
+      <mat-card-actions align="end">
+        <button mat-icon-button color="primary" (click)="openEditTaskModal(task)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="confirmDelete(task.id!)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  
+    <div *ngIf="!loading && filteredTasks.length === 0" class="no-tasks">
+      <mat-icon>assignment</mat-icon>
+      <p>No hay tareas disponibles</p>
+      <button mat-raised-button color="primary" (click)="openAddTaskModal()">
+        Crear primera tarea
+      </button>
+    </div>
+  </ion-content>
