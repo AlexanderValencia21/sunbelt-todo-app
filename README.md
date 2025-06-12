@@ -80,7 +80,7 @@ Correra en el puerto http://localhost:4200
 
 ###  Iniciar JSON Server
 
-Este proyecto utiliza [`json-server`]para simular una API RESTful.  
+Este proyecto utiliza [`json-server`]para simular una API RESTful. Ya que el JSONPlaceholder no me permite hacer visibles los cambios en las tareas que traia por defecto, simulaba la respuesta, pero no se hacia efectiva, por eso opte por usar un json server 
 El archivo `db.json` contiene los datos de las tareas.
 
 En una **consola separada**, ejecuta:
