@@ -1,59 +1,97 @@
-# AppSunbeltTodo
+# 📝 Sunbelt ToDo App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Aplicación web desarrollada como prueba técnica para el cargo de **Desarrollador Frontend Junior** en **Sunbelt**.  
+Incluye autenticación básica, CRUD de tareas, filtros, uso de Angular Material, soporte para móvil con Ionic y pruebas unitarias.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Demo en producción
+
+🌐 [Ver aplicación desplegada en Netlify](https://apptodosunbelt.netlify.app/)
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- ✅ Angular 17
+- ✅ Ionic Framework (UI móvil responsiva)
+- ✅ Angular Material (componentes UI)
+- ✅ TypeScript
+- ✅ HTML + SCSS
+- ✅ Netlify (despliegue)
+- ✅ Jasmine & Karma (pruebas unitarias)
+
+---
+
+## 📂 Estructura del proyecto
+```bash
+src/
+├── app/
+│ ├── auth/ # Login y autenticación
+│ ├── features/
+│ │ └── tasks/
+│ │   └── components/ #Componente task-form 
+│ │   └── models/     #Modelo del task
+│ │   └── pages/      #Pagina de task-list
+│ │   └── services/   #Servicio de llamado a la mockAPI  
+│ ├── shared/ # Módulos y componentes compartidos
+│ └── app.component.* # Entrada principal
+```
+
+---
+
+## ✅ Funcionalidades implementadas
+
+- ✔️ Login simulado (auth local con LocalStorage)
+- ✔️ Botón de logout y protección de rutas
+- ✔️ Listado de tareas con filtros por estado y búsqueda
+- ✔️ Crear, editar y eliminar tareas
+- ✔️ Diseño responsivo compatible con móvil (Ionic)
+- ✔️ Pruebas unitarias en componentes y servicios
+
+---
+
+## 🔐 Autenticación
+
+La autenticación es básica (solo frontend), usando LocalStorage para simular una sesión.  
+Al iniciar sesión se redirige a `/tasks`, al cerrar sesión se limpia el estado y vuelve al login.
+
+---
+
+## 📦 Instalación y ejecución local
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/tuusuario/sunbelt-todo-app.git
+cd sunbelt-todo-app
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 ng serve
 ```
+Correra en el puerto http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+###  Iniciar JSON Server
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Este proyecto utiliza [`json-server`]para simular una API RESTful.  
+El archivo `db.json` contiene los datos de las tareas.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+En una **consola separada**, ejecuta:
 
 ```bash
-ng generate --help
+json-server --watch db.json --port 3000
 ```
+---
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+###  Iniciar Tests
+Correr en la consola el comando 
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📱 Vista en dispositivo móvil
