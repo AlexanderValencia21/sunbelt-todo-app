@@ -12,6 +12,10 @@ Pero no se muestran debido a unos estilos, sin embargo si existen y son funciona
 
 🌐 [Ver aplicación desplegada en Netlify](https://apptodosunbelt.netlify.app/)
 
+Las credenciales de acceso son
+Usuario: admin@sunbelt.com
+Contraseña: 123456
+
 ---
 
 ## 🛠️ Tecnologías utilizadas
