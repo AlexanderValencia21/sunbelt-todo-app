@@ -93,5 +93,17 @@ Correr en la consola el comando
 ```bash
 ng test
 ```
-
+---
 ## 📱 Vista en dispositivo móvil
+
+### Inicio de sesion
+
+![alt text](image.png)
+
+### Lista de tareas
+
+![alt text](image-1.png)
+
+### Creacion/edicion de tareas
+
+![alt text](image-2.png)
