@@ -3,6 +3,8 @@
 Aplicación web desarrollada como prueba técnica para el cargo de **Desarrollador Frontend Junior** en **Sunbelt**.  
 Incluye autenticación básica, CRUD de tareas, filtros, uso de Angular Material, soporte para móvil con Ionic y pruebas unitarias.
 
+Nota: Tanto en la version web como la vesion movil los botones estan, el de Log out(superior izquierda), el de crear tarea (superior derecha)
+Pero no se muestran debido a unos estilos, sin embargo si existen y son funcionales
 ---
 
 ## 🚀 Demo en producción
