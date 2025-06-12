@@ -1,13 +1,20 @@
-<ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Lista de Tareas</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="openAddTaskModal()">
-          <ion-icon name="add" slot="icon-only"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Lista de Tareas</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="openAddTaskModal()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
   
   <ion-content>
     <mat-card *ngIf="loading" class="loading-spinner">

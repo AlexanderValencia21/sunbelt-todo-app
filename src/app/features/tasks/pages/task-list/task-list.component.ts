@@ -5,6 +5,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TaskFormComponent } from '../../components/task-form/task-form.component';
 import { ConfirmDialogComponent } from '../../../../shared/components/confirm-dialog/confirm-dialog.component';
+import { AuthService } from '../../../../auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-task-list',
   standalone: false,
@@ -27,7 +29,9 @@ export class TaskListComponent implements OnInit {
   constructor(
     private taskService: TaskService,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private auth: AuthService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -126,5 +130,9 @@ export class TaskListComponent implements OnInit {
         this.snackBar.open('Error al eliminar la tarea', 'Cerrar', { duration: 3000 });
       }
     });
+  }
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl('/login', { replaceUrl: true });
   }
 }
